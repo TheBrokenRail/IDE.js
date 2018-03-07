@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "codemirror": "^5.35.0",
-    "nw": "^0.28.3",
+    "nw": "^0.28.3"
   },
   "devDependencies": {
     "nw-builder": "^3.5.1"

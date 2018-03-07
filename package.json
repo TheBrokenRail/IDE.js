@@ -1,0 +1,16 @@
+{
+  "name": "ide.js",
+  "version": "1.0.0",
+  "description": "JavaScript IDE",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nw ."
+  },
+  "author": "TheBrokenRail",
+  "license": "ISC",
+  "dependencies": {
+    "codemirror": "^5.35.0",
+    "nw": "^0.28.3"
+  }
+}

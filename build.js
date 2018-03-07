@@ -1,5 +1,5 @@
-var nwBuilder = require('nw-builder');
-var nw = new nwBuilder({
+const nwBuilder = require('nw-builder');
+const nw = new nwBuilder({
   files: './**/**',
   platforms: ['win', 'linux', 'osx'],
   flavor: 'normal',

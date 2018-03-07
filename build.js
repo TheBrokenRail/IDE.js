@@ -1,7 +1,7 @@
 const nwBuilder = require('nw-builder');
 const nw = new nwBuilder({
   files: './**/*',
-  platforms: ['win', 'linux', 'osx'],
+  platforms: ['win', 'linux', 'osx64'],
   flavor: 'normal',
   appName: 'IDE.js'
 });

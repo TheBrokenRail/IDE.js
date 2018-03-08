@@ -2,11 +2,11 @@
 git config --global user.email "nobody@nobody.org"
 git config --global user.name "Travis CI"
 
+mkdir gh-pages
 cd build
 dir
 zip -r ../gh-pages/IDE.js.zip ./IDE.js/
 cd ../
-mkdir gh-pages
 cd gh-pages
 git init
 git add .

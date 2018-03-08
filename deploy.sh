@@ -5,11 +5,11 @@ git config --global user.name "Travis CI"
 mkdir gh-pages
 cd build
 dir
-zip -r ../gh-pages/win64.zip ./IDE.js/win64
-zip -r ../gh-pages/win32.zip ./IDE.js/win32
-zip -r ../gh-pages/linux64.zip ./IDE.js/linux64
-zip -r ../gh-pages/linux32.zip ./IDE.js/linux32
-zip -r ../gh-pages/osx64.zip ./IDE.js/osx64
+tar -czf ../gh-pages/win64.tar.gz ./IDE.js/win64
+tar -czf ../gh-pages/win32.tar.gz ./IDE.js/win32
+tar -czf ../gh-pages/linux64.tar.gz ./IDE.js/linux64
+tar -czf ../gh-pages/linux32.tar.gz ./IDE.js/linux32
+tar -czf ../gh-pages/osx64.tar.gz ./IDE.js/osx64
 cd ../
 cd gh-pages
 git init

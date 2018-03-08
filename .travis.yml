@@ -3,11 +3,4 @@ node_js:
   - "node"
 script:
   - node build.js
-deploy:
-  - provider: pages
-    local-dir: build
-    skip-cleanup: true
-    keep-history: true
-    github-token: $GITHUB_TOKEN
-    on:
-      branch: master
+  - bash deploy.sh

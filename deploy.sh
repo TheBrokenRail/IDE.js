@@ -4,7 +4,7 @@ git config --global user.name "Travis CI"
 
 cd build
 dir
-zip -r ../gh-pages/IDE.js.zip IDE.js
+zip -r ../gh-pages/IDE.js.zip ./IDE.js/
 cd ../
 mkdir gh-pages
 cd gh-pages

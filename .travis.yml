@@ -1,6 +1,12 @@
 language: node_js
 node_js:
   - "node"
+addons:
+  apt:
+    sources:
+    - sourceline: 'ppa:ubuntu-wine/ppa'
+    packages:
+    - wine
 script:
   - npm run dist
   - dir dist

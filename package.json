@@ -23,8 +23,8 @@
     "targets": [
       "zip",
       "7z",
-      "msis",
-      "msis7z"
+      "nsis",
+      "nsis7z"
     ]
   }
 }

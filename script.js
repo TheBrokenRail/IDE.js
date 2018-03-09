@@ -3,6 +3,7 @@ var menu = new nw.Menu();
 const fs = require('fs');
 const { spawn } = require('child_process');
 const path = require('path');
+const opn = require('opn');
 
 var terminalInstance = null;
 var projectDir = '\\\\notSet';
@@ -250,7 +251,7 @@ function buildStructure(filesDiv, indent, dir) {
           menu.append(new nw.MenuItem({
             label: 'Run In Web Browser',
             click: function () {
-              window.open('file://' + path.resolve(global.__dirname, dir + '/' + files[i]));
+              opn('file://' + path.resolve(global.__dirname, dir + '/' + files[i]));
             }
           }));
         }

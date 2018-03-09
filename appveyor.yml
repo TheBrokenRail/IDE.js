@@ -5,14 +5,16 @@ environment:
   GITHUB_TOKEN:
     secure: 4N44cIOQZNjIw3PKdN5DYkn5+2ymOpS4P295ZDM1l+ZwZCHydZ7MvuhmLk/hkQmR
 install:
-- npm install
+  - npm install
 build_script:
-- npm run dist
-- mkdir gh-pages
-- xcopy dist\* gh-pages
-- cd gh-pages
-- git init
-- git add .
-- git commit --quiet -m "Deploy to Github Pages"
-- git push --force "https://%GITHUB_TOKEN%@github.com/TheBrokenRail/IDE.js.git" master:gh-pages
+  - npm run dist
+  - mkdir gh-pages
+  - xcopy dist\* gh-pages
+  - cd gh-pages
+  - git config --global user.email "nobody@nobody.org"
+  - git config --global user.name "AppVeyor"
+  - git init
+  - git add .
+  - git commit --quiet -m "Deploy to Github Pages"
+  - git push --force "https://%GITHUB_TOKEN%@github.com/TheBrokenRail/IDE.js.git" master:gh-pages
 test: off

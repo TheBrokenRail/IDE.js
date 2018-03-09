@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --mirror https://dl.nwjs.io/ .",
+    "dist": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --concurrent --mirror https://dl.nwjs.io/ .",
     "start": "run --x64 --mirror https://dl.nwjs.io/ ."
   },
   "author": "TheBrokenRail",
@@ -16,5 +16,15 @@
   "devDependencies": {
     "nw": "^0.28.3",
     "nwjs-builder-phoenix": "^1.14.6"
+  },
+  "build": {
+    "packed": "true",
+    "outputPattern": "${NAME}-${PLATFORM}-${ARCH}",
+    "targets": [
+      "zip",
+      "7z",
+      "msis",
+      "msis7z"
+    ]
   }
 }

@@ -9,5 +9,5 @@ addons:
       - wine
 script:
   - npm run dist
-  - dir dist
+  - dir dist/ide.js-win-x64
   - bash deploy.sh

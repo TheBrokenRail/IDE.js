@@ -23,7 +23,7 @@
     "targets": [
       "zip",
       "7z",
-      "nsis7z"
+      "nsis"
     ],
     "win": {
       "productName": "IDE.js"

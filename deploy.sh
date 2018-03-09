@@ -2,7 +2,9 @@
 git config --global user.email "nobody@nobody.org"
 git config --global user.name "Travis CI"
 
-cd dist
+mkdir gh-pages
+cp dist/* gh-pages
+cd gh-pages
 git init
 git add .
 git commit --quiet -m "Deploy to Github Pages"

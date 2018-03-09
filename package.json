@@ -23,8 +23,16 @@
     "targets": [
       "zip",
       "7z",
-      "nsis",
       "nsis7z"
-    ]
+    ],
+    "win": {
+      "productName": "IDE.js"
+    },
+    "nsis": {
+      "installDirectory": "$PROGRAMFILES\\${_APPNAME}"
+    },
+    "mac": {
+      "displayName": "IDE.js"
+    }
   }
 }

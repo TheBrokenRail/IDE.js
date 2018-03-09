@@ -4,9 +4,9 @@ node_js:
 addons:
   apt:
     sources:
-    - sourceline: 'ppa:ubuntu-wine/ppa'
+      - sourceline: 'ppa:ubuntu-wine/ppa'
     packages:
-    - wine
+      - wine
 script:
   - npm run dist
   - dir dist

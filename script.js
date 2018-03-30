@@ -116,6 +116,7 @@ function runCommand(cmd, args) {
     document.getElementById('files').lastChild.id = 'selectedFile';
     currentFile = '\\\\terminal';
     editor.setOption('mode', 'null');
+    editor.setOption('readOnly', true);
     terminal = '';
     terminalStdin = null;
     if (terminalInstance) {

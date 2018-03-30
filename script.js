@@ -16,6 +16,15 @@ picker.onchange = function () {
 var menubar = new nw.Menu({type: 'menubar'});
 var filemenu = new nw.Menu();
 filemenu.append(new nw.MenuItem({
+  label: 'Reload Directory',
+  click: function () {
+    if (terminalInstance) {
+      terminalInstance.kill();
+    }
+    buildStructure(filesDiv, 0, projectDir);
+  }
+}));
+filemenu.append(new nw.MenuItem({
   label: 'Close Directory',
   click: function () {
     if (terminalInstance) {

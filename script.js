@@ -55,7 +55,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById('displayEditor'), {
 });
 var currentFile = '';
 var terminal = '';
-var terminalTempStdin = '';
+var currentStdin = '';
 var terminalUpdate = false;
 var terminalStdin = null;
 editor.on('change', function (instance, changeObj) {
@@ -65,7 +65,7 @@ editor.on('change', function (instance, changeObj) {
     }
   } else {
     if (terminalUpdate) {
-      terminalTempStdin = '';
+      currentStdin = '';
       terminalUpdate = false;
     }
   }
@@ -78,15 +78,24 @@ function setValueSafe(value) {
 }
 
 editor.on('keydown', function (instance, event) {
-  var key = event.key;
-  if (key === 'Enter') {
-    key = '\n';
-  }
-  if (terminalStdin && terminalStdin.writable && key !== 'Shift') {
-    terminal = terminal;
-    terminalTempStdin = terminalTempStdin + key;
-    setValueSafe(terminal + terminalTempStdin);
-    terminalStdin.write(key, 'utf8');
+  if (currentFile === '\\\\terminal') {
+    var key = event.key;
+    if (key === 'Shift') {
+      return;
+    }
+    if (terminalStdin && terminalStdin.writable) {
+      if (key === 'Enter') {
+        terminalStdin.write(currentStdin + '\n', 'utf8');
+        currentStdin = '';
+      } else {
+        if (key === 'Backspace') {
+          currentStdin = currentStdin.substring(0, currentStdin.length - 1);
+        } else {
+          currentStdin = currentStdin + key;
+        }
+        setValueSafe(terminal + currentStdin);
+      }
+    }
   }
 });
 

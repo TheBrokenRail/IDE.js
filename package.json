@@ -11,7 +11,7 @@
   "author": "TheBrokenRail",
   "license": "ISC",
   "dependencies": {
-    "codemirror": "^5.41.0",
+    "codemirror": "^5.50.0",
     "opn": "^5.2.0"
   },
   "devDependencies": {
